@@ -18,14 +18,13 @@ function init()
     };
 
     $('.song').on('click', function(e){
-        var src = $(e.target).attr('href');
-        var audio = $('<audio controls="controls" align="" autoload/>').attr('src', src)
-        
-        $('#' + $(e.targer).id).append(audio);
+        $('.song').css('background', 'white') 
+        $(e.target).css('background', 'red') 
 
-        console.log(src);
-        console.log(audio);
-        console.log('done');
+        nextSong = $(e.target).attr('href');
+        audioPlayer.src = nextSong;
+        audioPlayer.load();
+        audioPlayer.play();
     });
     audio_setup();
 };
