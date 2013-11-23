@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.contrib import admin
 from app.models import Sound
 
@@ -7,4 +8,3 @@ class SoundAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Sound, SoundAdmin)
-1 / 0

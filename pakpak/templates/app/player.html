@@ -1,4 +1,16 @@
-<audio src="{{ sound_src }}" preload="auto" controls></audio>
-{% for sound in sound_list %}
-    <audio src="{{ sound }}" preload="auto" controls></audio>
-{% endfor %}
+<head>
+    <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="/static/js/utils.js"></script>
+</head>
+
+<body OnLoad="init()">
+    <audio id="audio"  src="{{ sound_src }}" controls="controls" align=""> </audio>
+
+    <ul id='play_list' count="{{ sound_list|length }}">
+        {% for sound in sound_list %}
+            <li id='song_{{ forloop.counter0 }}' class='song' href="{{ sound.url }}">
+                {{ sound.title }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
